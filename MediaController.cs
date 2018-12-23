@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
+using System.IO;
 
 public class MediaController : MonoBehaviour {
 
@@ -65,5 +66,8 @@ public class MediaController : MonoBehaviour {
         audio.Play();
 
         text.text = getSongName();
+
+        // wavファイルを削除
+        System.IO.File.Delete(path);
     }
 }
